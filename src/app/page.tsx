@@ -1,69 +1,71 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowUpRight } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="flex min-h-screen flex-1 flex-col">
+      <header className="border-b border-border/70">
+        <div className="mx-auto flex w-full max-w-(--container-width) items-center justify-between gap-6 px-6 py-5 lg:px-8">
+          <Link className="text-sm font-semibold tracking-tight" href="/">
+            Lugha Academy
+          </Link>
+          <nav aria-label="Navigation principale" className="flex items-center gap-1">
+            <div className="hidden items-center gap-1 sm:flex">
+              <Link
+                className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                href="/"
+              >
+                Accueil
+              </Link>
+              <Link
+                className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                href="#"
+              >
+                Programme
+              </Link>
+            </div>
+            <ThemeToggle />
+            <Link
+              className="ml-1 inline-flex h-8 items-center justify-center rounded-md bg-foreground px-3 text-sm font-medium text-background transition-opacity hover:opacity-80"
+              href="/dashboard"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              <span className="hidden sm:inline">Accéder à l’espace</span>
+              <span className="sm:hidden">Espace</span>
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <section className="mx-auto flex w-full max-w-(--container-width) flex-1 items-center px-6 py-[var(--space-section)] lg:px-8">
+        <div className="max-w-3xl">
+          <p className="mb-6 text-xs font-medium tracking-[0.2em] text-primary">
+            APPRENDRE · PROGRESSER · MAÎTRISER
           </p>
+          <h1 className="max-w-2xl text-4xl font-semibold leading-[1.08] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+            Apprenez une nouvelle langue, à votre rythme.
+          </h1>
+          <p className="mt-7 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg">
+            Un espace d&apos;apprentissage structuré pour comprendre les langues,
+            développer vos compétences et progresser durablement.
+          </p>
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <Link
+              className="inline-flex h-11 items-center justify-center gap-2 rounded-md bg-primary px-5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-85"
+              href="/dashboard"
+            >
+              Commencer à apprendre
+              <ArrowUpRight aria-hidden="true" className="size-4" />
+            </Link>
+            <Link
+              className="inline-flex h-11 items-center justify-center rounded-md border border-border px-5 text-sm font-medium transition-colors hover:bg-muted"
+              href="#"
+            >
+              Découvrir le programme
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+      </section>
+    </main>
+  )
 }
