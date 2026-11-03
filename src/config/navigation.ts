@@ -37,22 +37,22 @@ export const navigation = {
       items: [
         {
           title: "Mon parcours",
-          url: "#",
+          url: "/espace/parcours",
           icon: BookOpenIcon,
         },
         {
           title: "Programme",
-          url: "#",
+          url: "/espace/programme",
           icon: LibraryIcon,
         },
         {
           title: "Révisions",
-          url: "#",
+          url: "/espace/revisions",
           icon: BrainIcon,
         },
         {
           title: "Vocabulaire",
-          url: "#",
+          url: "/espace/vocabulaire",
           icon: LanguagesIcon,
         },
       ],
@@ -64,7 +64,7 @@ export const navigation = {
       items: [
         {
           title: "Paramètres",
-          url: "#",
+          url: "/espace/parametres",
           icon: Settings2Icon,
         },
         {
